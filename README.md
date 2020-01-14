@@ -12,9 +12,17 @@ properties, `page` and `request`. `page` is a `BeautifulSoup` object.
 ### Caching
 
 By default, PyScrape implements a cache, allowing for near-instantaneous
-results on pages that have been requested previously. However, it is possible
-to disable this cache. Simply run `pyscrape.caching = False`. To re-enable it,
-use `pyscrape.caching = True`. Run `demo.py` for a demonstration of the cache.
+results on pages that have been requested previously. This cache operates
+automatically, and it operates transparently to any code that does not
+specifically interact with it. It is possible to use PyScrape without any
+understanding of the cache.
+
+However, it is possible to disable the cache. Simply run `pyscrape.caching =
+False`. To re-enable it, use `pyscrape.caching = True`.
+
+To empty the cache, call `pyscrape.empty_cache()`.
+
+Run `demo.py` for a demonstration of the impact of the cache.
 
 ## Requirements
 

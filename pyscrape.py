@@ -18,3 +18,7 @@ def get(url):
         if caching:
             __cache[url] = response
         return response
+
+def empty_cache():
+    global __cache
+    __cache = {}

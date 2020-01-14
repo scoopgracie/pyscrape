@@ -8,8 +8,8 @@ class Page:
 
 caching = True
 __cache = {}
-def get(url):
-    if caching and url in __cache.keys():
+def get(url, use_cache = True):
+    if caching and use_cache and url in __cache.keys():
         return __cache[url]
     else:
         request = requests.get(url)

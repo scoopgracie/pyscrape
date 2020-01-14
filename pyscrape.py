@@ -15,7 +15,7 @@ def get(url, use_cache = True):
         request = requests.get(url)
         soup = BeautifulSoup(request.text, features='lxml')
         response = Page(soup, request)
-        if caching:
+        if caching and use_cache:
             __cache[url] = response
         return response
 

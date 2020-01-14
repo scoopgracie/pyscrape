@@ -18,7 +18,9 @@ specifically interact with it. It is possible to use PyScrape without any
 understanding of the cache.
 
 However, it is possible to disable the cache. Simply run `pyscrape.caching =
-False`. To re-enable it, use `pyscrape.caching = True`.
+False`. To re-enable it, use `pyscrape.caching = True`. If you simply need to
+ignore the cache for a single call, simply add `use_cache=False` to your
+`pyscrape.get()` call.
 
 To empty the cache, call `pyscrape.empty_cache()`.
 

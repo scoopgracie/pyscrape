@@ -1,2 +1,7 @@
 language: python
 script: python3 ./test.py
+os:
+        - linux
+          dist: bionic
+        - osx
+          language: generic

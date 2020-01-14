@@ -18,7 +18,7 @@ if a != expect:
     print('got {} (expected {})'.format(c, expect))
     exit(1)
 print('clearing cache')
-pyscrape.clear_cache()
+pyscrape.empty_cache()
 if pyscrape.__cache != {}: #Note: this is poor practice, don't interact
     #directly with __cache ouside test scripts
     print('cache is not empty')

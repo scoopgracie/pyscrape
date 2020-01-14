@@ -9,15 +9,20 @@ class Page:
 
 caching = True
 __cache = {}
+
+def cache_check(url):
+    '''cache_check(url) - check if url should be cached; set this to your own function for selective caching (return True if url should be cached, False otherwise)'''
+    return True #By default, cache everything
+
 def get(url, use_cache = True):
     '''get(url, use_cache=True) - get url, skip cache if use_cache == False, will probably raise a Beautiful Soup or Requests exception on error'''
-    if caching and use_cache and url in __cache.keys():
+    if caching and use_cache and cache_check(url) and url in __cache.keys():
         return __cache[url]
     else:
         request = requests.get(url)
         soup = BeautifulSoup(request.text, features='lxml')
         response = Page(soup, request)
-        if caching and use_cache:
+        if caching and use_cache and cache_check(url):
             __cache[url] = response
         return response
 

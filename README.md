@@ -24,7 +24,11 @@ ignore the cache for a single call, simply add `use_cache=False` to your
 
 To empty the cache, call `pyscrape.empty_cache()`.
 
-TO remove a single page from the cache, call `pyscrape.uncache(url)`.
+To remove a single page from the cache, call `pyscrape.uncache(url)`.
+
+To enable selective caching, set `pyscrape.cache_check` to a function that
+takes `url` as an input and returns `True` if the page should be cached and
+`False` otherwise.
 
 Run `demo.py` for a demonstration of the impact of the cache.
 

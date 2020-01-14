@@ -22,6 +22,8 @@ False`. To re-enable it, use `pyscrape.caching = True`.
 
 To empty the cache, call `pyscrape.empty_cache()`.
 
+TO remove a single page from the cache, call `pyscrape.uncache(url)`.
+
 Run `demo.py` for a demonstration of the impact of the cache.
 
 ## Requirements

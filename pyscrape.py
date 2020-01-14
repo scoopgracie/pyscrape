@@ -19,6 +19,12 @@ def get(url, use_cache = True):
             __cache[url] = response
         return response
 
+
+def uncache(url):
+    global __cache
+    del __cache[url]
+
+
 def empty_cache():
     global __cache
     __cache = {}

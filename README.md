@@ -1,32 +1,32 @@
-# pyscrape
-[![Build Status](https://api.travis-ci.com/scoopgracie/pyscrape.svg?branch=master)](https://travis-ci.com/scoopgracie/pyscrape)
+# scrapesy
+[![Build Status](https://api.travis-ci.com/scoopgracie/scrapesy.svg?branch=master)](https://travis-ci.com/scoopgracie/scrapesy)
 
 Easy and Pythonic way to get and parse a Web page
 
 ## Usage
 
-To get a `Page` object, use `pyscrape.get(url)`. The `Page` object has two
+To get a `Page` object, use `scrapesy.get(url)`. The `Page` object has two
 properties, `page` and `request`. `page` is a `BeautifulSoup` object.
 `request` is a Requests `Response` object.
 
 ### Caching
 
-By default, PyScrape implements a cache, allowing for near-instantaneous
+By default, Scrapesy implements a cache, allowing for near-instantaneous
 results on pages that have been requested previously. This cache operates
 automatically, and it operates transparently to any code that does not
-specifically interact with it. It is possible to use PyScrape without any
+specifically interact with it. It is possible to use Scrapesy without any
 understanding of the cache.
 
-However, it is possible to disable the cache. Simply run `pyscrape.caching =
-False`. To re-enable it, use `pyscrape.caching = True`. If you simply need to
+However, it is possible to disable the cache. Simply run `scrapesy.caching =
+False`. To re-enable it, use `scrapesy.caching = True`. If you simply need to
 ignore the cache for a single call, simply add `use_cache=False` to your
-`pyscrape.get()` call.
+`scrapesy.get()` call.
 
-To empty the cache, call `pyscrape.empty_cache()`.
+To empty the cache, call `scrapesy.empty_cache()`.
 
-To remove a single page from the cache, call `pyscrape.uncache(url)`.
+To remove a single page from the cache, call `scrapesy.uncache(url)`.
 
-To enable selective caching, set `pyscrape.cache_check` to a function that
+To enable selective caching, set `scrapesy.cache_check` to a function that
 takes `url` as an input and returns `True` if the page should be cached and
 `False` otherwise.
 

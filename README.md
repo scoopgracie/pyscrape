@@ -1,5 +1,5 @@
 # scrapesy
-[![Build Status](https://api.travis-ci.com/scoopgracie/scrapesy.svg?branch=master)](https://travis-ci.com/scoopgracie/scrapesy)
+[![Build Status](https://api.travis-ci.com/scoopgracie/pyscrape.svg?branch=master)](https://travis-ci.com/scoopgracie/pyscrape)
 
 Easy and Pythonic way to get and parse a Web page
 
@@ -37,3 +37,9 @@ Run `demo.py` for a demonstration of the impact of the cache.
 * Beautiful Soup 4
 * Requests
 * Python 3 (it may work on 2.7, but is not tested)
+
+## Note
+
+This project was originally called PyScrape. If you find that name used
+anywhere in this repo, please report it as an issue! Also, Travis CI seems to
+still think it's called pyscrape.

@@ -1,5 +1,5 @@
 # scrapesy
-[![Build Status](https://api.travis-ci.com/scoopgracie/pyscrape.svg?branch=master)](https://travis-ci.com/scoopgracie/pyscrape)
+[![Build Status](https://api.travis-ci.com/scoopgracie/scrapesy.svg?branch=master)](https://travis-ci.com/scoopgracie/scrapesy)
 
 Easy and Pythonic way to get and parse a Web page
 

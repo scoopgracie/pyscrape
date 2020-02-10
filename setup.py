@@ -1,8 +1,13 @@
 from distutils.core import setup
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+        long_description = f.read()
+
 setup(
   name = 'scrapesy',         # How you named your package folder (MyLib)
   packages = ['scrapesy'],   # Chose the same as "name"
-  version = '1.0.2',      # Start with a small number and increase it with every change you make
+  version = '1.0.3',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Simple Python web scraper/page fetcher with cache',   # Give a short description about your library
   author = 'ScoopGracie',                   # Type in your name
@@ -24,4 +29,7 @@ setup(
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
   ],
+  long_description=long_description,
+  long_description_content_type='text/markdown'
 )
+print('Hello, world!')

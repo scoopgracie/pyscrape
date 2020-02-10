@@ -41,5 +41,4 @@ Run `demo.py` for a demonstration of the impact of the cache.
 ## Note
 
 This project was originally called PyScrape. If you find that name used
-anywhere in this repo, please report it as an issue! Also, Travis CI seems to
-still think it's called pyscrape.
+anywhere in this repo, please report it as an issue!

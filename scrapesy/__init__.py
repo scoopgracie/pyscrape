@@ -1,18 +1,30 @@
-#!/usr/bin/env python3
+'''scrapesy - easy web scraper and file downloader
+provides downloading with cache as well as parsing in get() function
+'''
 import requests
 from bs4 import BeautifulSoup
+
 class Page:
-    '''Page - Page.page = beautiful soup object; Page.request = requests request object'''
+    '''Page - a Web page
+    Page.page is a BeautifulSoup object
+    Page.request is a requests request object
+    '''
     def __init__(self, soup, request):
         self.page = soup
         self.request = request
 
+
 caching = True
 __cache = {}
 
+
 def cache_check(url):
-    '''cache_check(url) - check if url should be cached; set this to your own function for selective caching (return True if url should be cached, False otherwise)'''
+    ''' cache_check(url) - check if url should be cached
+    overwrite for custom cache control (return True if url should be cached,
+    False otherwise)
+    '''
     return True #By default, cache everything
+
 
 def get(url, use_cache = True):
     '''get(url, use_cache=True) - get url, skip cache if use_cache == False, will probably raise a Beautiful Soup or Requests exception on error'''

@@ -9,6 +9,13 @@ To get a `Page` object, use `scrapesy.get(url)`. The `Page` object has two
 properties, `page` and `request`. `page` is a `BeautifulSoup` object.
 `request` is a Requests `Response` object.
 
+However, if you just want this for the cache (see below), and do not need or
+want Beautiful Soup to parse the pages, pass `parse=False` to get(). This will
+simply return a Requests request object, not a `Page` object. Disabling
+parsing and caching is possible, but rather useless, because parsing and
+caching are the main features of Scrapesy. If you find yourself always
+disabling both, just use Requests directly.
+
 ### Caching
 
 By default, Scrapesy implements a cache, allowing for near-instantaneous

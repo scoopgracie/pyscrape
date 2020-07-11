@@ -26,16 +26,27 @@ def cache_check(url):
     return True #By default, cache everything
 
 
-def get(url, use_cache = True):
-    '''get(url, use_cache=True) - get url, skip cache if use_cache == False, will probably raise a Beautiful Soup or Requests exception on error'''
+def get(url, use_cache=True, parse=True):
+    '''get(url, use_cache=True, parse=True) - get url
+    skip cache if use_cache == False
+    return Page object if parse == True, requests request object otherwise
+    will probably raise a Beautiful Soup or Requests exception on error
+    '''
     if caching and use_cache and cache_check(url) and url in __cache.keys():
-        return __cache[url]
-    else:
-        request = requests.get(url)
+        request = __cache[url]
+        if not parse:
+            return request
         soup = BeautifulSoup(request.text, features='lxml')
         response = Page(soup, request)
+        return response
+    else:
+        request = requests.get(url)
         if caching and use_cache and cache_check(url):
-            __cache[url] = response
+            __cache[url] = request
+        if not parse:
+            return request
+        soup = BeautifulSoup(request.text, features='lxml')
+        response = Page(soup, request)
         return response
 
 

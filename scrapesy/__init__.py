@@ -24,15 +24,15 @@ def export_cache():
     return pickle.dumps(__cache)
 
 
-def import_cache(dump, overwrite=False):
+def import_cache(dump, replace=False):
     '''import_cache(dump, overwrite=False) - load a cache dump
     WARNING: this uses pickle.loads(); do not import cache dumps from
     untrusted sources!
-    if overwrite, replace the entire cache, otherwise, combine current cache
+    if replace, replace the entire cache, otherwise, combine current cache
     and imported cache
     '''
     global __cache
-    if overwrite:
+    if replace:
         __cache = pickle.loads(dump)
     else:
         __cache = {**__cache, **pickle.loads(dump)}

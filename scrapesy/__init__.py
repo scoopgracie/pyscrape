@@ -20,10 +20,17 @@ __cache = {}
 
 
 def export_cache():
+    '''export_cache() - dump and return the cache'''
     return pickle.dumps(__cache)
 
 
 def import_cache(dump, overwrite=False):
+    '''import_cache(dump, overwrite=False) - load a cache dump
+    WARNING: this uses pickle.loads(); do not import cache dumps from
+    untrusted sources!
+    if overwrite, replace the entire cache, otherwise, combine current cache
+    and imported cache
+    '''
     global __cache
     if overwrite:
         __cache = pickle.loads(dump)

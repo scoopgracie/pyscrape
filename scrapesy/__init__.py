@@ -2,6 +2,7 @@
 provides downloading with cache as well as parsing in get() function
 '''
 import requests
+import pickle
 from bs4 import BeautifulSoup
 
 class Page:
@@ -16,6 +17,18 @@ class Page:
 
 caching = True
 __cache = {}
+
+
+def export_cache():
+    return pickle.dumps(__cache)
+
+
+def import_cache(dump, overwrite=False):
+    global __cache
+    if overwrite:
+        __cache = pickle.loads(dump)
+    else:
+        __cache = {**__cache, **pickle.loads(dump)}
 
 
 def cache_check(url):
